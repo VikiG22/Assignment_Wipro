@@ -31,7 +31,6 @@ class DashboardViewController: UIViewController {
     super.viewDidLoad()
     self.title = "Facts"
     designUI()
-    tableView.isHidden = true
     view.backgroundColor = .white
   }
 
@@ -45,6 +44,7 @@ class DashboardViewController: UIViewController {
     tableView.refreshControl = UIRefreshControl()
     tableView.refreshControl?.addTarget(self, action: #selector(refreshAction), for: .valueChanged)
     tableView.refreshControl?.tintColor = .black
+    tableView.tableFooterView = UIView()
     getFactsDetials()
     self.activityStartAnimating(activityColor: .black, backgroundColor: .clear)
   }
@@ -64,12 +64,10 @@ class DashboardViewController: UIViewController {
         DispatchQueue.main.async {
             if success {
                 self.navigationItem.title = "Facts"
-                self.tableView.isHidden = false
                 self.tableView.reloadData()
             }
             else {
-                self.tableView.isHidden = true
-                self.showAlert(message: error?.localizedDescription, delay: 0.3)
+                self.showAlert(message: error?.rawValue, delay: 0.3)
             }
             self.tableView.refreshControl?.endRefreshing()
             self.activityStopAnimating()
