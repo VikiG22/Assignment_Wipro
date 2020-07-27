@@ -54,7 +54,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         } else {
             print("Not reachable")
-            
+            let objVC = UIViewController()
+            objVC.showAlert(message: ApiError.networkNotAvilable.rawValue, title: Message.header.rawValue, delay: 0.3)
         }
     }
 }

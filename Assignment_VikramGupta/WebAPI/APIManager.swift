@@ -19,11 +19,22 @@ class ApiManager: NSObject {
                     
             let task = session.dataTask(with: url, completionHandler: { data, response, error in
                 // Check the response
-                if let data = data {
-                    completionHandler(.success(data))
-                }else{
+                
+                guard let responseData = data, error == nil else {
+                    completionHandler(.failure(.networkNotAvilable))
+                  return
+                }
+
+                if let httpStatus = response as? HTTPURLResponse, ![200, 201].contains(httpStatus.statusCode) {
                     completionHandler(.failure(.inValidResponse))
                 }
+                completionHandler(.success(responseData))
+                
+//                if let data = data {
+//                    completionHandler(.success(data))
+//                }else{
+//                    completionHandler(.failure(.inValidResponse))
+//                }
             })
             task.resume()
         } else {
