@@ -42,4 +42,42 @@ class Assignment_VikramGuptaTests: XCTestCase {
             }
         }
     }
+    
+    func testSetCell() throws{
+        let objCellData = try testGetData().rows![0]
+        let cell = DashboardTableViewCell()
+        cell.setCellData(result: objCellData)
+    }
+    
+    func testGetData() throws -> Facts{
+        guard
+            let path = Bundle.main.path(forResource: "response", ofType: "json")
+            else { fatalError("Can't find search.json file") }
+        
+        let data = try Data(contentsOf: URL(fileURLWithPath: path))
+        let response = try JSONDecoder().decode(Facts.self, from: data)
+        return response
+    }
+    
+    func testLoadImage() throws{
+        let objCellData = try testGetData().rows![0]
+        let objImageView = UIImageView()
+        objImageView.loadImageUsingCache(withUrl: objCellData.imageHref!)
+        
+    }
+    
+    func testShowAlertMethod(){
+        let objVC = UIViewController()
+        objVC.showAlert(message: "Test Demo Message")
+    }
+    
+    func testStartActivityIndicator(){
+        let objVC = UIViewController()
+        objVC.activityStartAnimating(activityColor: .gray, backgroundColor: .lightGray)
+    }
+    
+    func testStopActivityIndicator(){
+        let objVC = UIViewController()
+        objVC.activityStopAnimating()
+    }
 }

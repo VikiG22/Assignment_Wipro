@@ -7,15 +7,18 @@
 //
 
 import UIKit
+import Reachability
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var reachability: Reachability!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
       // Override point for customization after application launch.
       loadRootViewController()
+    setUpNetworkAvailablity()
       return true
     }
 
@@ -29,6 +32,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+    }
+    
+    func setUpNetworkAvailablity(){
+        do {
+            try reachability = Reachability()
+            NotificationCenter.default.addObserver(self, selector: #selector(self.reachabilityChanged(_:)), name: Notification.Name.reachabilityChanged, object: reachability)
+            try reachability.startNotifier()
+        } catch {
+            print("This is not working")
+        }
+    }
+    
+    @objc func reachabilityChanged(_ note: NSNotification) {
+        let reachability = note.object as! Reachability
+        if reachability.connection != .unavailable {
+            if reachability.connection == .wifi {
+                print("Reachable via WiFi")
+            } else {
+                print("Reachable via Cellular")
+            }
+        } else {
+            print("Not reachable")
+            
+        }
     }
 }
 

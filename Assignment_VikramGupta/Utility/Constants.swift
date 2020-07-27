@@ -93,3 +93,7 @@ func darkGrayColor() -> UIColor{
 func navigationBarColor() -> UIColor{
     return UIColor.red
 }
+
+func appDelegate()->(AppDelegate) {
+    return UIApplication.shared.delegate as! AppDelegate
+}

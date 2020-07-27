@@ -33,7 +33,7 @@ class DashboardTableViewCell: UITableViewCell {
   private let lblTitle: UILabel = {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
-    label.font = UIFont(name:Font_Helvetica_Neue,size:18)
+    label.font = UIFont(name:Font_Helvetica_Neue,size:FONT_SIZE_18)
     label.textColor = titleColor()
     label.numberOfLines = 0
     return label
@@ -43,7 +43,7 @@ class DashboardTableViewCell: UITableViewCell {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
     label.numberOfLines = 0
-    label.font = UIFont(name:Font_Helvetica_Neue,size:14)
+    label.font = UIFont(name:Font_Helvetica_Neue,size:FONT_SIZE_14)
     label.textColor = .darkGray
     return label
   }()

@@ -46,7 +46,6 @@ class DashboardViewController: UIViewController {
     tableView.refreshControl?.tintColor = .black
     tableView.tableFooterView = UIView()
     getFactsDetials()
-    self.activityStartAnimating(activityColor: .black, backgroundColor: .clear)
   }
 
   // Adding autolayout constraints on table View
@@ -60,6 +59,12 @@ class DashboardViewController: UIViewController {
 
   // Request for country facts details
   private func getFactsDetials() {
+    guard appDelegate().reachability.connection != .unavailable else {
+        self.showAlert(message: ApiError.networkNotAvilable.rawValue, delay: 0.3)
+        self.tableView.refreshControl?.endRefreshing()
+        return
+    }
+    self.activityStartAnimating(activityColor: .black, backgroundColor: .clear)
     viewModel.requestData(apiName: ApiName.facts) { (success, error) in
         DispatchQueue.main.async {
             if success {

@@ -30,7 +30,11 @@ extension UIViewController {
         activityIndicator = UIActivityIndicatorView(frame: CGRect.init(x: 0, y: 0, width: 50, height: 50))
         activityIndicator.center = self.view.center
         activityIndicator.hidesWhenStopped = true
-        activityIndicator.style = UIActivityIndicatorView.Style.large
+        if #available(iOS 13.0, *) {
+            activityIndicator.style = UIActivityIndicatorView.Style.large
+        } else {
+            activityIndicator.style = UIActivityIndicatorView.Style.whiteLarge
+        }
         activityIndicator.color = activityColor
         activityIndicator.startAnimating()
         activityIndicator.backgroundColor = .lightGray
