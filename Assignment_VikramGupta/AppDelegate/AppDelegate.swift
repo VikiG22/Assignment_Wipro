@@ -16,10 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var reachability: Reachability!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-      // Override point for customization after application launch.
-      loadRootViewController()
-    setUpNetworkAvailablity()
-      return true
+        // Override point for customization after application launch.
+        loadRootViewController()
+        // Set up check Network connection.
+        setUpNetworkAvailablity()
+        return true
     }
 
     // Initalize root view controller
@@ -54,8 +55,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         } else {
             print("Not reachable")
-            let objVC = UIViewController()
-            objVC.showAlert(message: ApiError.networkNotAvilable.rawValue, title: Message.header.rawValue, delay: 0.3)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()) {
+                let alert = UIAlertController(title: Message.header.rawValue, message: ApiError.networkNotAvilable.rawValue, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel) { _ in
+                    alert.dismiss(animated: true, completion: nil)
+                })
+                self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+            }
         }
     }
 }

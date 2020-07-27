@@ -29,12 +29,6 @@ class ApiManager: NSObject {
                     completionHandler(.failure(.inValidResponse))
                 }
                 completionHandler(.success(responseData))
-                
-//                if let data = data {
-//                    completionHandler(.success(data))
-//                }else{
-//                    completionHandler(.failure(.inValidResponse))
-//                }
             })
             task.resume()
         } else {
