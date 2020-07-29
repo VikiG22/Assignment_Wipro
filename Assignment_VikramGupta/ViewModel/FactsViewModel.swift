@@ -17,17 +17,19 @@ class FactsViewModel: NSObject {
             return (row.title != nil || row.description != nil) }
         return rows?[index]
     }
-    
+    //get title of the Scrren
+    func getTitle() -> String{
+        return (facts?.title)!
+    }
     // Number of Facts Items
     func numberOfRows() -> Int {
         let items  = facts?.rows?.filter { row in
             return (row.title != nil || row.description != nil) }
         return items?.count ?? 0
     }
-    
     //MARK: API CALL
     func requestData(apiName: ApiName, completionHandler: @escaping (_ result: Bool, _ error: ApiError?) -> Void){
-        ApiManager.shared.apiRequest(apiName: apiName) { result in
+        ApiManager.shared.apiRequest(apiName: apiName) {[weak self] result in
             switch result{
             case .success(let data):
                 do {
@@ -38,7 +40,7 @@ class FactsViewModel: NSObject {
                       return
                     }
                     let json = try deacoder.decode(Facts.self, from: newData)
-                    self.facts = json
+                    self!.facts = json
                     completionHandler(true, nil)
                 } catch {
                     print("Error during JSON serialization: \(error.localizedDescription)")

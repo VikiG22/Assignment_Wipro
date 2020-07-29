@@ -11,9 +11,7 @@ import Reachability
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
-    var reachability: Reachability!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -29,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.navigationBar.isTranslucent = true
         navigationController.navigationBar.barTintColor = navigationBarColor()
-        navigationController.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
@@ -37,9 +34,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setUpNetworkAvailablity(){
         do {
-            try reachability = Reachability()
-            NotificationCenter.default.addObserver(self, selector: #selector(self.reachabilityChanged(_:)), name: Notification.Name.reachabilityChanged, object: reachability)
-            try reachability.startNotifier()
+            try NetworkManager.sharedInstance.reachability = Reachability()
+            NotificationCenter.default.addObserver(self, selector: #selector(self.reachabilityChanged(_:)), name: Notification.Name.reachabilityChanged, object: NetworkManager.sharedInstance.reachability)
+            try NetworkManager.sharedInstance.reachability.startNotifier()
         } catch {
             print("This is not working")
         }

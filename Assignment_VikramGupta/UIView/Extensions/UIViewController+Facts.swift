@@ -27,7 +27,7 @@ extension UIViewController {
         backgroundView.tag = 475647
         
         var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
-        activityIndicator = UIActivityIndicatorView(frame: CGRect.init(x: 0, y: 0, width: 50, height: 50))
+        activityIndicator = UIActivityIndicatorView(frame: CGRect.init(x: 0, y: 0, width: 50*WIDTH_FACTOR, height: 50*WIDTH_FACTOR))
         activityIndicator.center = self.view.center
         activityIndicator.hidesWhenStopped = true
         if #available(iOS 13.0, *) {

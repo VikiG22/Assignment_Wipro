@@ -11,7 +11,7 @@ import UIKit
 class DashboardViewController: UIViewController {
 
   // View Model
-  private lazy var viewModel: FactsViewModel = FactsViewModel()
+  private lazy var factsViewModel: FactsViewModel = FactsViewModel()
   // Cell Reuse Identifier
   static let cellIdentifier: String = "cell"
 
@@ -20,7 +20,7 @@ class DashboardViewController: UIViewController {
     let tableview = UITableView()
     tableview.translatesAutoresizingMaskIntoConstraints = false
     tableview.backgroundColor = .white
-    tableview.estimatedRowHeight = 100
+    tableview.estimatedRowHeight = 80
     tableview.rowHeight = UITableView.automaticDimension
     tableview.register(DashboardTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
     return tableview
@@ -29,7 +29,6 @@ class DashboardViewController: UIViewController {
   // MARK: View Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.title = "Facts"
     designUI()
     view.backgroundColor = .white
   }
@@ -45,6 +44,7 @@ class DashboardViewController: UIViewController {
     tableView.refreshControl?.addTarget(self, action: #selector(refreshAction), for: .valueChanged)
     tableView.refreshControl?.tintColor = .black
     tableView.tableFooterView = UIView()
+    navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: Font_Helvetica_Neue_Bold, size: FONT_SIZE_15)!, .foregroundColor: UIColor.white]
     getFactsDetials()
   }
 
@@ -59,16 +59,16 @@ class DashboardViewController: UIViewController {
 
   // Request for country facts details
   private func getFactsDetials() {
-    guard appDelegate().reachability.connection != .unavailable else {
+    guard NetworkManager.sharedInstance.reachability.connection != .unavailable else {
         self.showAlert(message: ApiError.networkNotAvilable.rawValue, delay: 0.3)
         self.tableView.refreshControl?.endRefreshing()
         return
     }
     self.activityStartAnimating(activityColor: .black, backgroundColor: .clear)
-    viewModel.requestData(apiName: ApiName.facts) { (success, error) in
+    factsViewModel.requestData(apiName: ApiName.facts) { (success, error) in
         DispatchQueue.main.async {
             if success {
-                self.navigationItem.title = "Facts"
+                self.navigationItem.title = self.factsViewModel.getTitle()
                 self.tableView.reloadData()
             }
             else {
@@ -90,12 +90,12 @@ class DashboardViewController: UIViewController {
 // MARK: UITableView DataSource
 extension DashboardViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return viewModel.numberOfRows()
+    return factsViewModel.numberOfRows()
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: DashboardViewController.cellIdentifier, for: indexPath) as? DashboardTableViewCell else { return UITableViewCell() }
-    if let item = viewModel.getRow(at: indexPath.row) {
+    if let item = factsViewModel.getRow(at: indexPath.row) {
       cell.setCellData(result: item)
     }
     return cell

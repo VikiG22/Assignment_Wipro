@@ -12,6 +12,7 @@ import UIKit
 // Base Url
 let baseURL = "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/"
 
+// Api Error
 enum ApiError: String, Error{
     case inValidResponse = "InValid response"
     case networkNotAvilable = "You are currently offline."
@@ -27,18 +28,20 @@ enum Message: String {
   case header = "Alert"
 }
 
+// Images
+let IMG_PLACEHOLDER = "placeholder"
+
 // Screen Height & Width
 let WIDTH = UIScreen.main.bounds.size.width
 let HEIGHT = UIScreen.main.bounds.size.height
 
 let WIDTH_FACTOR: CGFloat = WIDTH/320.0
 let HEIGHT_FACTOR : CGFloat = HEIGHT/568.0
-
 let FontFactor : CGFloat = WIDTH/320.0
-
 
 //Font name and size
 let Font_Helvetica_Neue  = "HelveticaNeue"
+let Font_Helvetica_Neue_Bold  = "HelveticaNeue-Bold"
 
 let FONT_SIZE_3  : CGFloat      = 3 * FontFactor
 let FONT_SIZE_4  : CGFloat      = 4 * FontFactor
@@ -79,7 +82,7 @@ func ColorRGB(r : Float , g : Float , b : Float) -> UIColor{
 }
 
 func titleColor() -> UIColor {
-    return ColorRGB(r:0, g:0, b:0)
+    return ColorRGB(r: 41, g: 95, b: 110)
 }
 
 func discriptionColor() -> UIColor {
@@ -91,9 +94,5 @@ func darkGrayColor() -> UIColor{
 }
 
 func navigationBarColor() -> UIColor{
-    return UIColor.red
-}
-
-func appDelegate()->(AppDelegate) {
-    return UIApplication.shared.delegate as! AppDelegate
+    return ColorRGB(r: 41, g: 95, b: 110)
 }
