@@ -10,5 +10,3 @@ Coding test submission to Wipro by Vikram Gupta
 
 # App Architecture:-
 Followed MVVM architecture
-
-# App screenshots
