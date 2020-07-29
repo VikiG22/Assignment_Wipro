@@ -14,5 +14,5 @@ Coding Test submission to @Wipro by Vikram Gupta
 Followed MVVM architecture
 
 # App screenshots
-/Users/vikramgupta/Desktop/Simulator Screen Shot - iPhone 8 Plus - 2020-07-29 at 15.10.59.png
-/Users/vikramgupta/Desktop/Simulator Screen Shot - iPhone 8 Plus - 2020-07-29 at 15.11.01.png
+/Users/vikramgupta/Desktop/New Wipro clone/Assignment_Wipro/Simulator Screen Shot - iPhone 8 Plus - 2020-07-29 at 15.10.59.png
+/Users/vikramgupta/Desktop/New Wipro clone/Assignment_Wipro/Simulator Screen Shot - iPhone 8 Plus - 2020-07-29 at 15.11.01.png
