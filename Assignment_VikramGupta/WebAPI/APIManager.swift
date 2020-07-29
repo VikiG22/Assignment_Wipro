@@ -9,22 +9,19 @@
 import UIKit
  
 class ApiManager: NSObject {
-    
+    //Shared instance of ApiManager Class
     static let shared = ApiManager()
-    
+    //APi call
     func apiRequest(apiName: ApiName, completionHandler: @escaping (Result<Data, ApiError>) -> Void){
         if NetworkManager.isNetworkAvailable() {
             let session = URLSession.shared
             let url = URL(string: (baseURL+"\(apiName.rawValue)").addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed)!)!
-                    
             let task = session.dataTask(with: url, completionHandler: { data, response, error in
                 // Check the response
-                
                 guard let responseData = data, error == nil else {
                     completionHandler(.failure(.networkNotAvilable))
-                  return
+                    return
                 }
-
                 if let httpStatus = response as? HTTPURLResponse, ![200, 201].contains(httpStatus.statusCode) {
                     completionHandler(.failure(.inValidResponse))
                 }

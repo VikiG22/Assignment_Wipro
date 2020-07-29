@@ -10,13 +10,13 @@ import Foundation
 
 // Api Response Structure
 struct Facts: Codable {
-  let title: String?
-  let rows: [Row]?
+    let title: String?
+    let rows: [Row]?
 }
 
 // MARK: - Row
 struct Row: Codable {
-  let title: String?
-  let description: String?
-  let imageHref: String?
+    let title: String?
+    let description: String?
+    let imageHref: String?
 }

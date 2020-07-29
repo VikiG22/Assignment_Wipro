@@ -37,10 +37,10 @@ class FactsViewModel: NSObject {
                     deacoder.keyDecodingStrategy = .convertFromSnakeCase
                     let jsonString = String(data: data, encoding: .ascii)
                     guard let newData = jsonString?.data(using: .utf8) else {
-                      return
+                        return
                     }
                     let json = try deacoder.decode(Facts.self, from: newData)
-                    self!.facts = json
+                    self?.facts = json
                     completionHandler(true, nil)
                 } catch {
                     print("Error during JSON serialization: \(error.localizedDescription)")

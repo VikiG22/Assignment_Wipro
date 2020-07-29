@@ -26,6 +26,12 @@ class Assignment_VikramGuptaModelTest: XCTestCase {
         }
     }
     
+    //Model Class Test Cases
+    func testFactModel(){
+        let objModel = Facts(title: "About Canada", rows: [Row(title: "Beavers", description: "Beavers are second only to humans in their ability to manipulate and change their environment. They can measure up to 1.3 metres long. A group of beavers is called a colony", imageHref: "http://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/American_Beaver.jpg/220px-American_Beaver.jpg")])
+        XCTAssertNotNil(objModel)
+    }
+    
     func testSearchResponse() throws {
         guard
             let path = Bundle.main.path(forResource: "response", ofType: "json")
@@ -33,12 +39,10 @@ class Assignment_VikramGuptaModelTest: XCTestCase {
         
         let data = try Data(contentsOf: URL(fileURLWithPath: path))
         let response = try JSONDecoder().decode(Facts.self, from: data)
-        
         let obj = response
         let objFacts = response.rows![0]
         
         XCTAssertEqual(obj.title, "About Canada")
-        
         XCTAssertEqual(objFacts.title, "Beavers")
         XCTAssertEqual(objFacts.description, "Beavers are second only to humans in their ability to manipulate and change their environment. They can measure up to 1.3 metres long. A group of beavers is called a colony")
         XCTAssertEqual(objFacts.imageHref, "http://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/American_Beaver.jpg/220px-American_Beaver.jpg")
@@ -60,5 +64,4 @@ class Assignment_VikramGuptaModelTest: XCTestCase {
             XCTFail("Fail")
         }
     }
-    
 }

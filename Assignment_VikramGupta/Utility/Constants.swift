@@ -28,6 +28,9 @@ enum Message: String {
   case header = "Alert"
 }
 
+//Constant String when data not available
+let NoDescription = "No Description"
+
 // Images
 let IMG_PLACEHOLDER = "placeholder"
 

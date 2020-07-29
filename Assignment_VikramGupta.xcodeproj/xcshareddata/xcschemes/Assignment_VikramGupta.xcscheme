@@ -38,6 +38,11 @@
                BlueprintName = "Assignment_VikramGuptaTests"
                ReferencedContainer = "container:Assignment_VikramGupta.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "Assignment_VikramGuptaTests/testNavigationTitle()">
+               </Test>
+            </SkippedTests>
          </TestableReference>
          <TestableReference
             skipped = "NO">

@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setUpNetworkAvailablity()
         return true
     }
-
+    
     // Initalize root view controller
     private func loadRootViewController() {
         let viewController = DashboardViewController(nibName: nil, bundle: nil)
