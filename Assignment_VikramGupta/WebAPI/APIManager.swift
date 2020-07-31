@@ -11,6 +11,7 @@ import UIKit
 class ApiManager: NSObject {
     //Shared instance of ApiManager Class
     static let shared = ApiManager()
+    
     //APi call
     func apiRequest(apiName: ApiName, completionHandler: @escaping (Result<Data, ApiError>) -> Void){
         if NetworkManager.isNetworkAvailable() {

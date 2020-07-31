@@ -9,6 +9,7 @@
 import UIKit
 
 class DashboardTableViewCell: UITableViewCell {
+    
     // Cell background custom view
     private let containerView: UIView = {
         let view = UIView()
@@ -18,6 +19,7 @@ class DashboardTableViewCell: UITableViewCell {
         view.backgroundColor = UIColor.white
         return view
     }()
+    
     // ImageView property
     private let imgFacts: UIImageView = {
         let img = UIImageView.init(image: UIImage(named: IMG_PLACEHOLDER))
@@ -26,9 +28,10 @@ class DashboardTableViewCell: UITableViewCell {
         img.clipsToBounds = true
         img.layer.borderWidth = 1
         img.layer.borderColor = UIColor.darkGray.cgColor
-        img.layer.cornerRadius = (60*WIDTH_FACTOR)/2
+        img.layer.cornerRadius = (60 * WIDTH_FACTOR)/2
         return img
     }()
+    
     // Facts item title lebel property
     private let lblTitle: UILabel = {
         let label = UILabel()
@@ -38,15 +41,17 @@ class DashboardTableViewCell: UITableViewCell {
         label.numberOfLines = 0
         return label
     }()
+    
     // Facts item description lebel property
     private let lblDescription: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = UIFont(name:Font_Helvetica_Neue,size:FONT_SIZE_12)
+        label.font = UIFont(name:Font_Helvetica_Neue, size:FONT_SIZE_12)
         label.textColor = .darkGray
         return label
     }()
+    
     // Initailize Table view cell
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -60,9 +65,11 @@ class DashboardTableViewCell: UITableViewCell {
         addConstraints() // adding contarints on all subview which added on cell container
         self.selectionStyle = .none
     }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     // Grouping all subviews Autolayout costarints
     private func addConstraints() {
         addConstraintsContainerView()
@@ -70,36 +77,41 @@ class DashboardTableViewCell: UITableViewCell {
         addConstraintsTitltLbl()
         addConstraintsdescription()
     }
+    
     // Adding autolayout constraints on Container View
     fileprivate func addConstraintsContainerView() {
-        containerView.heightAnchor.constraint(greaterThanOrEqualToConstant: 70*WIDTH_FACTOR).isActive = true
-        containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8*WIDTH_FACTOR).isActive = true
-        containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8*WIDTH_FACTOR).isActive = true
-        containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5*WIDTH_FACTOR).isActive = true
-        containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5*WIDTH_FACTOR).isActive = true
+        containerView.heightAnchor.constraint(greaterThanOrEqualToConstant: 70 * WIDTH_FACTOR).isActive = true
+        containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8 * WIDTH_FACTOR).isActive = true
+        containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8 * WIDTH_FACTOR).isActive = true
+        containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5 * WIDTH_FACTOR).isActive = true
+        containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5 * WIDTH_FACTOR).isActive = true
     }
+    
     // Adding autolayout constraints on Imageview
     fileprivate func addConstraintsImageView() {
         imgFacts.translatesAutoresizingMaskIntoConstraints = false
-        imgFacts.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 5*WIDTH_FACTOR).isActive = true
-        imgFacts.widthAnchor.constraint(equalToConstant: 60*WIDTH_FACTOR).isActive = true
-        imgFacts.heightAnchor.constraint(equalToConstant: 60*WIDTH_FACTOR).isActive = true
-        imgFacts.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 5*WIDTH_FACTOR).isActive = true
+        imgFacts.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 5 * WIDTH_FACTOR).isActive = true
+        imgFacts.widthAnchor.constraint(equalToConstant: 60 * WIDTH_FACTOR).isActive = true
+        imgFacts.heightAnchor.constraint(equalToConstant: 60 * WIDTH_FACTOR).isActive = true
+        imgFacts.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 5 * WIDTH_FACTOR).isActive = true
     }
+    
     // Adding autolayout constraints on title Label
     fileprivate func addConstraintsTitltLbl() {
-        lblTitle.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 5*WIDTH_FACTOR).isActive = true
-        lblTitle.leadingAnchor.constraint(equalTo: imgFacts.trailingAnchor, constant: 10*WIDTH_FACTOR).isActive = true
+        lblTitle.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 5 * WIDTH_FACTOR).isActive = true
+        lblTitle.leadingAnchor.constraint(equalTo: imgFacts.trailingAnchor, constant: 10 * WIDTH_FACTOR).isActive = true
         lblTitle.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
-        lblTitle.heightAnchor.constraint(equalToConstant: 20*WIDTH_FACTOR).isActive = true
+        lblTitle.heightAnchor.constraint(equalToConstant: 20 * WIDTH_FACTOR).isActive = true
     }
+    
     // Adding autolayout constraints on description Label
     fileprivate func addConstraintsdescription() {
         lblDescription.leadingAnchor.constraint(equalTo: lblTitle.leadingAnchor).isActive = true
-        lblDescription.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -5*WIDTH_FACTOR).isActive = true
-        lblDescription.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -5*WIDTH_FACTOR).isActive = true
+        lblDescription.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -5 * WIDTH_FACTOR).isActive = true
+        lblDescription.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -5 * WIDTH_FACTOR).isActive = true
         lblDescription.topAnchor.constraint(equalTo: lblTitle.bottomAnchor).isActive = true
     }
+    
     // Update Cell Detail With Row
     func setCellData(result: Row) {
         lblTitle.text = result.title

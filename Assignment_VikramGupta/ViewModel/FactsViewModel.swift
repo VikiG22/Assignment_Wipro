@@ -17,19 +17,22 @@ class FactsViewModel: NSObject {
             return (row.title != nil || row.description != nil) }
         return rows?[index]
     }
+    
     //get title of the Scrren
-    func getTitle() -> String{
-        return (facts?.title)!
+    func getTitle() -> String? {
+        return facts?.title
     }
+    
     // Number of Facts Items
-    func numberOfRows() -> Int {
+    func numberOfRows() -> Int? {
         let items  = facts?.rows?.filter { row in
             return (row.title != nil || row.description != nil) }
-        return items?.count ?? 0
+        return items?.count
     }
+    
     //MARK: API CALL
     func requestData(apiName: ApiName, completionHandler: @escaping (_ result: Bool, _ error: ApiError?) -> Void){
-        ApiManager.shared.apiRequest(apiName: apiName) {[weak self] result in
+        ApiManager.shared.apiRequest(apiName: apiName) { [weak self] result in
             switch result{
             case .success(let data):
                 do {

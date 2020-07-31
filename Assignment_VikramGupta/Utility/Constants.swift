@@ -96,6 +96,10 @@ func darkGrayColor() -> UIColor{
     return ColorRGB(r: 66, g: 79, b: 94)
 }
 
+func lightGrayColor() -> UIColor{
+    return UIColor.lightGray
+}
+
 func navigationBarColor() -> UIColor{
     return ColorRGB(r: 41, g: 95, b: 110)
 }

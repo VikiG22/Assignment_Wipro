@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
     }
     
+    // Method for set up network availability
     func setUpNetworkAvailablity(){
         do {
             try NetworkManager.sharedInstance.reachability = Reachability()
@@ -42,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    // Method for checking network connection
     @objc func reachabilityChanged(_ note: NSNotification) {
         let reachability = note.object as! Reachability
         if reachability.connection != .unavailable {

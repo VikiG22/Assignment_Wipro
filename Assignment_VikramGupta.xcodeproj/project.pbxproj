@@ -52,7 +52,7 @@
 		6CE27762A1BF3F6B86D14A21 /* Pods_Assignment_VikramGuptaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assignment_VikramGuptaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7276CEB622EE17A287C46C72 /* Pods-Assignment_VikramGupta-Assignment_VikramGuptaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment_VikramGupta-Assignment_VikramGuptaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Assignment_VikramGupta-Assignment_VikramGuptaUITests/Pods-Assignment_VikramGupta-Assignment_VikramGuptaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9628B57808C450A5672D8E8E /* Pods_Assignment_VikramGupta_Assignment_VikramGuptaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assignment_VikramGupta_Assignment_VikramGuptaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E092FA7F24C9661C008895FD /* Assignment_VikramGupta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment_VikramGupta.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E092FA7F24C9661C008895FD /* Canada Facts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Canada Facts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E092FA8224C9661C008895FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E092FA8B24C96624008895FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E092FA8E24C96624008895FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 		E092FA8024C9661C008895FD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E092FA7F24C9661C008895FD /* Assignment_VikramGupta.app */,
+				E092FA7F24C9661C008895FD /* Canada Facts.app */,
 				E092FA9524C96625008895FD /* Assignment_VikramGuptaTests.xctest */,
 				E092FAA024C96625008895FD /* Assignment_VikramGuptaUITests.xctest */,
 			);
@@ -292,7 +292,7 @@
 			);
 			name = Assignment_VikramGupta;
 			productName = Assignment_VikramGupta;
-			productReference = E092FA7F24C9661C008895FD /* Assignment_VikramGupta.app */;
+			productReference = E092FA7F24C9661C008895FD /* Canada Facts.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E092FA9424C96625008895FD /* Assignment_VikramGuptaTests */ = {
@@ -695,8 +695,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Vikram.Assignment-VikramGupta";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vikram.canadaFacts;
+				PRODUCT_NAME = "Canada Facts";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -714,8 +714,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Vikram.Assignment-VikramGupta";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vikram.canadaFacts;
+				PRODUCT_NAME = "Canada Facts";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -78,17 +78,34 @@ class DashboardViewController: UIViewController {
             }
         }
     }
+    
     // MARK: ACTIONS
     // Refresh facts list form the API call
     @objc private func refreshAction() {
         getFactsDetials()
     }
+    
+    // Method for no data available
+    func setNoDataAvailable(){
+        let emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
+        emptyLabel.text = "No Data Available"
+        emptyLabel.textColor = lightGrayColor()
+        emptyLabel.font = UIFont(name:Font_Helvetica_Neue, size:FONT_SIZE_22)
+        emptyLabel.textAlignment = NSTextAlignment.center
+        self.tableView.backgroundView = emptyLabel
+        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+    }
 }
 
 // MARK: UITableView DataSource
 extension DashboardViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return factsViewModel.numberOfRows()
+        if factsViewModel.numberOfRows() == 0 {
+            setNoDataAvailable()
+            return 0
+        }
+        return factsViewModel.numberOfRows() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

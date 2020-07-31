@@ -10,7 +10,6 @@ import Foundation
 import Reachability
 
 class NetworkManager: NSObject {
-    
     var reachability: Reachability!
     static let sharedInstance: NetworkManager = { return NetworkManager() }()
     
@@ -22,7 +21,6 @@ class NetworkManager: NSObject {
         catch {
             print(error.localizedDescription)
         }
-        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(networkStatusChanged(_:)),
@@ -48,32 +46,28 @@ class NetworkManager: NSObject {
         }
     }
     
-    ///Methods for check network connectivity type.
+    // Methods for check network connectivity type.
     static func isReachable(completed: @escaping (NetworkManager) -> Void) {
         if (NetworkManager.sharedInstance.reachability).connection != .unavailable {
             completed(NetworkManager.sharedInstance)
         }
     }
-    
-    static func isUnreachable(completed: @escaping (NetworkManager) -> Void) {
-        if (NetworkManager.sharedInstance.reachability).connection == .unavailable {
-            completed(NetworkManager.sharedInstance)
-        }
-    }
-    
+        
+    // Method check network connection type cellular
     static func isReachableViaWWAN(completed: @escaping (NetworkManager) -> Void) {
         if (NetworkManager.sharedInstance.reachability).connection == .cellular {
             completed(NetworkManager.sharedInstance)
         }
     }
     
+    // Method check network connection type wifi
     static func isReachableViaWiFi(completed: @escaping (NetworkManager) -> Void) {
         if (NetworkManager.sharedInstance.reachability).connection == .wifi {
             completed(NetworkManager.sharedInstance)
         }
     }
     
-    ///Method for check internet is available or not.
+    // Method for check internet is available or not.
     class func isNetworkAvailable() -> Bool {
         var reachable = false
         NetworkManager.isReachable { _ in
