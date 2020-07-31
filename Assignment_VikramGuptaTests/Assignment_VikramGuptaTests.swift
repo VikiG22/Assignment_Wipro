@@ -61,6 +61,13 @@ class Assignment_VikramGuptaTests: XCTestCase {
         XCTAssertEqual(actualReuseIdentifer, expectedReuseIdentifier)
     }
     
+    func testTableViewCellHasReuseIdentifierNotEqual() {
+        let cell = dashboardViewController.tableView(dashboardViewController.tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as? DashboardTableViewCell
+        let actualReuseIdentifer = cell?.reuseIdentifier
+        let invalidIdentifier = "invalid_identifier"
+        XCTAssertNotEqual(actualReuseIdentifer, invalidIdentifier)
+    }
+    
     //API Calling Test Cases
     func testAPIWorking() {
         let expectation = XCTestExpectation.init(description: "Pass")
@@ -91,6 +98,11 @@ class Assignment_VikramGuptaTests: XCTestCase {
         XCTAssertNotNil(objImageView, "Fail to load image using url")
     }
     
+    func testNilDescription() throws{
+        let objCellData = try testGetData().rows![1]
+        XCTAssertNil(objCellData.description, "Nil description")
+    }
+    
     func testSetCell() throws{
         let objCellData = try testGetData().rows![0]
         let cell = DashboardTableViewCell()
@@ -109,11 +121,5 @@ class Assignment_VikramGuptaTests: XCTestCase {
     
     func testStopActivityIndicator(){
         XCTAssertNotNil(dashboardViewController.activityStopAnimating(), "Fail to hide activity indicator")
-    }
-    
-    func testEmptyLoadImage() throws{
-        let objImageView = UIImageView()
-        objImageView.loadImageUsingCache(withUrl: "")
-        XCTAssertNil(nil, "Empty image url")
     }
 }
