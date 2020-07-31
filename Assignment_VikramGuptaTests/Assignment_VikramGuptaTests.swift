@@ -7,6 +7,7 @@
 //
 
 import XCTest
+
 @testable import Assignment_VikramGupta
 
 class Assignment_VikramGuptaTests: XCTestCase {
@@ -108,5 +109,11 @@ class Assignment_VikramGuptaTests: XCTestCase {
     
     func testStopActivityIndicator(){
         XCTAssertNotNil(dashboardViewController.activityStopAnimating(), "Fail to hide activity indicator")
+    }
+    
+    func testEmptyLoadImage() throws{
+        let objImageView = UIImageView()
+        objImageView.loadImageUsingCache(withUrl: "")
+        XCTAssertNil(nil, "Empty image url")
     }
 }
