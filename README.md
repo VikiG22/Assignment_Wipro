@@ -13,8 +13,8 @@ Coding Test submission to @Wipro by Vikram Gupta
 # App architecture
 Followed MVVM architecture
 
-# App screenshots
-<a href="https://github.com/VikiG22/Assignment_Wipro/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202020-07-29%20at%2015.10.59.png">Launch Screenl</a>
-<a href="https://github.com/VikiG22/Assignment_Wipro/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202020-07-29%20at%2015.11.01.png">Dashboard Screenl</a>
+### App screenshots
+![1](https://github.com/VikiG22/Assignment_Wipro/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202020-07-29%20at%2015.10.59.png)
+![2](https://github.com/VikiG22/Assignment_Wipro/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202020-07-29%20at%2015.11.01.png)
 
 
