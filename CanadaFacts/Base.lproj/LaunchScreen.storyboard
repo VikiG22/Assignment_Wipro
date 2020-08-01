@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Puf-T3-7hg">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="YRL-gc-TrY">
+            <objects>
+                <viewController id="Puf-T3-7hg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q4V-gU-l5r">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Canada" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjv-LK-4eg">
+                                <rect key="frame" x="88" y="427" width="238" height="42"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="InterView Assignment @Wipro" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hn4-FT-QVc">
+                                <rect key="frame" x="50" y="822" width="314" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.092568404970000004" green="0.27868676190000002" blue="0.35130077599999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="p36-cq-M2v" firstAttribute="bottom" secondItem="Hn4-FT-QVc" secondAttribute="bottom" constant="20" id="0bf-aA-f7L"/>
+                            <constraint firstItem="zjv-LK-4eg" firstAttribute="centerY" secondItem="Q4V-gU-l5r" secondAttribute="centerY" id="Ggp-r5-9Zh"/>
+                            <constraint firstItem="zjv-LK-4eg" firstAttribute="centerX" secondItem="Q4V-gU-l5r" secondAttribute="centerX" id="Mef-N1-BPw"/>
+                            <constraint firstItem="Hn4-FT-QVc" firstAttribute="leading" secondItem="p36-cq-M2v" secondAttribute="leading" constant="50" id="lDG-u1-cvZ"/>
+                            <constraint firstItem="Hn4-FT-QVc" firstAttribute="centerX" secondItem="Q4V-gU-l5r" secondAttribute="centerX" id="ymw-GF-hx0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="p36-cq-M2v"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dbc-Mp-s2G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+</document>
