@@ -22,7 +22,6 @@
 		E00EB1D024D50E1A00F9FF2A /* response.json in Resources */ = {isa = PBXBuildFile; fileRef = E00EB1CE24D50E1A00F9FF2A /* response.json */; };
 		E00EB1D224D50EC800F9FF2A /* CanadaFactsModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00EB1D124D50EC800F9FF2A /* CanadaFactsModelTests.swift */; };
 		E0A8F41124D48CB40095C281 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A8F41024D48CB40095C281 /* AppDelegate.swift */; };
-		E0A8F41524D48CB40095C281 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A8F41424D48CB40095C281 /* ViewController.swift */; };
 		E0A8F41D24D48CB60095C281 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0A8F41B24D48CB60095C281 /* LaunchScreen.storyboard */; };
 		E0A8F42824D48CB60095C281 /* CanadaFactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A8F42724D48CB60095C281 /* CanadaFactsTests.swift */; };
 		E0A8F43324D48CB60095C281 /* CanadaFactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A8F43224D48CB60095C281 /* CanadaFactsUITests.swift */; };
@@ -66,7 +65,6 @@
 		E00EB1D124D50EC800F9FF2A /* CanadaFactsModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanadaFactsModelTests.swift; sourceTree = "<group>"; };
 		E0A8F40D24D48CB40095C281 /* CanadaFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanadaFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0A8F41024D48CB40095C281 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = CanadaFacts/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
-		E0A8F41424D48CB40095C281 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E0A8F41924D48CB60095C281 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0A8F41C24D48CB60095C281 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0A8F41E24D48CB60095C281 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -240,7 +238,6 @@
 				E00EB1BD24D50DA700F9FF2A /* Utility */,
 				E00EB1C024D50DBB00F9FF2A /* UIView */,
 				E00EB1CC24D50E0E00F9FF2A /* Resources */,
-				E0A8F41424D48CB40095C281 /* ViewController.swift */,
 				E0A8F41924D48CB60095C281 /* Assets.xcassets */,
 				E0A8F41B24D48CB60095C281 /* LaunchScreen.storyboard */,
 				E0A8F41E24D48CB60095C281 /* Info.plist */,
@@ -522,7 +519,6 @@
 				E00EB1B924D50D8500F9FF2A /* Facts.swift in Sources */,
 				E00EB1B524D50D6D00F9FF2A /* NetworkManager.swift in Sources */,
 				E00EB1BF24D50DB100F9FF2A /* Constants.swift in Sources */,
-				E0A8F41524D48CB40095C281 /* ViewController.swift in Sources */,
 				E00EB1C824D50DEC00F9FF2A /* DashboardViewController.swift in Sources */,
 				E00EB1C424D50DD400F9FF2A /* UIImageView+LoadImageURL.swift in Sources */,
 				E00EB1CB24D50E0100F9FF2A /* DashboardTableViewCell.swift in Sources */,

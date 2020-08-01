@@ -50,7 +50,7 @@ class CanadaFactsTests: XCTestCase {
         let factsViewModel = FactsViewModel()
         factsViewModel.requestData(apiName: ApiName.facts) { (success, error) in
             if success {
-                XCTAssertEqual(factsViewModel.getTitle(), "")
+                XCTAssertEqual(factsViewModel.getTitle(), "About Canada")
             }
             else {
                 XCTFail("Fail")
@@ -90,7 +90,7 @@ class CanadaFactsTests: XCTestCase {
         XCTAssertNotEqual(actualReuseIdentifer, invalidIdentifier)
     }
     
-    //API Calling Test Cases
+    // API Calling Test Cases
     func testAPIWorking() {
         let expectation = XCTestExpectation.init(description: "Pass")
         ApiManager.shared.apiRequest(apiName: ApiName.facts) { result in
@@ -102,7 +102,8 @@ class CanadaFactsTests: XCTestCase {
             }
         }
     }
-    //Read response.json file data
+    
+    // Read response.json file data
     func testGetData() throws -> Facts{
         guard
             let path = Bundle.main.path(forResource: "response", ofType: "json")
@@ -112,6 +113,7 @@ class CanadaFactsTests: XCTestCase {
         XCTAssertNotNil(response, "Fail to get response from json file")
         return response
     }
+    
     // TableViewCell load image Test Cases
     func testLoadImage() throws{
         let objCellData = try testGetData().rows![0]
@@ -125,6 +127,7 @@ class CanadaFactsTests: XCTestCase {
         XCTAssertNil(objCellData.description, "Nil description")
     }
     
+    // Test check cell not nil
     func testSetCell() throws{
         let objCellData = try testGetData().rows![0]
         let cell = DashboardTableViewCell()
@@ -144,5 +147,4 @@ class CanadaFactsTests: XCTestCase {
     func testStopActivityIndicator(){
         XCTAssertNotNil(dashboardViewController.activityStopAnimating(), "Fail to hide activity indicator")
     }
-
 }

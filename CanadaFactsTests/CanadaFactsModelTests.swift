@@ -33,22 +33,37 @@ class CanadaFactsModelTests: XCTestCase {
         XCTAssertNotNil(objModel)
     }
     
+    // Test search response
     func testSearchResponse() throws {
         guard
             let path = Bundle.main.path(forResource: "response", ofType: "json")
             else { fatalError("Can't find search.json file") }
-        
         let data = try Data(contentsOf: URL(fileURLWithPath: path))
         let response = try JSONDecoder().decode(Facts.self, from: data)
         let obj = response
         let objFacts = response.rows![0]
-        
         XCTAssertEqual(obj.title, "About Canada")
         XCTAssertEqual(objFacts.title, "Beavers")
         XCTAssertEqual(objFacts.description, "Beavers are second only to humans in their ability to manipulate and change their environment. They can measure up to 1.3 metres long. A group of beavers is called a colony")
         XCTAssertEqual(objFacts.imageHref, "http://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/American_Beaver.jpg/220px-American_Beaver.jpg")
     }
     
+    // Test search response
+    func testSearchResponseNotEqual() throws {
+        guard
+            let path = Bundle.main.path(forResource: "response", ofType: "json")
+            else { fatalError("Can't find search.json file") }
+        let data = try Data(contentsOf: URL(fileURLWithPath: path))
+        let response = try JSONDecoder().decode(Facts.self, from: data)
+        let obj = response
+        let objFacts = response.rows![0]
+        XCTAssertNotEqual(obj.title, "About")
+        XCTAssertNotEqual(objFacts.title, "Facts")
+        XCTAssertNotEqual(objFacts.description, "Beavers are second only to humans in their ability to manipulate and change their environment.")
+        XCTAssertNotEqual(objFacts.imageHref, "220px-American_Beaver.jpg")
+    }
+    
+    // Test number of rows
     func testNumberOfRows() throws {
         let expectation = XCTestExpectation.init(description: "Pass")
         guard
@@ -63,5 +78,4 @@ class CanadaFactsModelTests: XCTestCase {
             XCTFail("Fail")
         }
     }
-
 }
