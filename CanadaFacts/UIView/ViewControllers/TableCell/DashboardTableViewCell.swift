@@ -9,7 +9,6 @@
 import UIKit
 
 class DashboardTableViewCell: UITableViewCell {
-    
     // Cell background custom view
     private let containerView: UIView = {
         let view = UIView()

@@ -15,7 +15,6 @@ let imageCache = NSCache<NSString, AnyObject>()
 // UIImageview extension
 // Description - method for adding image download
 extension UIImageView {
-    
     // To downlad image with image url
     //  - Parameter urlString: Pass Image URL as string which you image you want to down load
     func loadImageUsingCache(withUrl urlString: String) {

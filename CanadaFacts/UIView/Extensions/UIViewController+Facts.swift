@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 extension UIViewController {
-    
     //Method for show Alert
     func showAlert(message: String?, title: String = Message.header.rawValue, delay: Double = 0.0) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + delay) {

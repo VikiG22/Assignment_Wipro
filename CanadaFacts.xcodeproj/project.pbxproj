@@ -65,7 +65,6 @@
 		E00EB1D124D50EC800F9FF2A /* CanadaFactsModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanadaFactsModelTests.swift; sourceTree = "<group>"; };
 		E0A8F40D24D48CB40095C281 /* CanadaFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanadaFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0A8F41024D48CB40095C281 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = CanadaFacts/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
-		E0A8F41924D48CB60095C281 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0A8F41C24D48CB60095C281 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0A8F41E24D48CB60095C281 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0A8F42324D48CB60095C281 /* CanadaFactsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CanadaFactsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +164,7 @@
 		E00EB1C024D50DBB00F9FF2A /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				E08F0A8724D6E8B20074C03D /* LaunchScreen */,
 				E00EB1C124D50DC800F9FF2A /* Extensions */,
 				E00EB1C624D50DDE00F9FF2A /* ViewControllers */,
 			);
@@ -206,6 +206,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		E08F0A8724D6E8B20074C03D /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E0A8F41B24D48CB60095C281 /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
 		E0A8F40424D48CB40095C281 = {
 			isa = PBXGroup;
 			children = (
@@ -232,14 +240,12 @@
 			isa = PBXGroup;
 			children = (
 				E00EB1B124D50D1000F9FF2A /* AppDelegate */,
-				E00EB1B224D50D5D00F9FF2A /* WebAPI */,
+				E00EB1C024D50DBB00F9FF2A /* UIView */,
 				E00EB1B724D50D7B00F9FF2A /* Model */,
 				E00EB1BA24D50D9000F9FF2A /* ViewModel */,
+				E00EB1B224D50D5D00F9FF2A /* WebAPI */,
 				E00EB1BD24D50DA700F9FF2A /* Utility */,
-				E00EB1C024D50DBB00F9FF2A /* UIView */,
 				E00EB1CC24D50E0E00F9FF2A /* Resources */,
-				E0A8F41924D48CB60095C281 /* Assets.xcassets */,
-				E0A8F41B24D48CB60095C281 /* LaunchScreen.storyboard */,
 				E0A8F41E24D48CB60095C281 /* Info.plist */,
 			);
 			path = CanadaFacts;

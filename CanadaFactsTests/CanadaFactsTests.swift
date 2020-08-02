@@ -134,7 +134,7 @@ class CanadaFactsTests: XCTestCase {
         cell.setCellData(result: objCellData)
         XCTAssertNotNil(cell, "Fail to get cells")
     }
-    
+        
     // Controller Test Cases
     func testShowAlertMethod(){
         XCTAssertNotNil(dashboardViewController.showAlert(message: "Test Demo Message"), "Fail to show alert")

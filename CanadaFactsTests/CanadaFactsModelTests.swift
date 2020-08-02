@@ -11,7 +11,6 @@ import XCTest
 @testable import CanadaFacts
 
 class CanadaFactsModelTests: XCTestCase {
-
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }

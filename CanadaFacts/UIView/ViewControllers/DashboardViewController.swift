@@ -99,7 +99,6 @@ class DashboardViewController: UIViewController {
 
 // MARK: UITableView DataSource
 extension DashboardViewController: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if factsViewModel.numberOfRows() == 0 || factsViewModel.numberOfRows() == nil {
             setNoDataAvailable()
